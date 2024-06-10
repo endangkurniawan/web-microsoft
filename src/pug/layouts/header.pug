@@ -1,0 +1,140 @@
+//-------------------------------------------------------------------------------
+  @name: Layout | Header
+  @description: Header
+  -------------------------------------------------------------------------------//
+
+//Data Header
+-
+  const otherNav = [
+    { txt: 'Microsoft 365', link: '#mic-365' },
+    { txt: 'Teams', link: '#teams' },
+    { txt: 'Copilot', link: '#copilot' },
+    { txt: 'Xbox', link: '#xbox' },
+    { txt: 'Dukungan', link: '#dukungan' }
+  ];
+
+  const otherDropdown = [
+    {
+      title: 'Perangkat Lunak',
+      items: [
+        { txt: 'Aplikasi Windows', link: '#apsWindow' },
+        { txt: 'AI', link: '#ai' },
+        { txt: 'OneDrive', link: '#oneDrive' },
+        { txt: 'Outlook', link: '#outlook' },
+        { txt: 'Skype', link: '#skype' },
+        { txt: 'OneNote', link: '#oneNote' },
+        { txt: 'Microsoft Teams', link: '#microsoftTeams' }
+      ]
+    },
+    {
+      title: 'PC dan perangkat',
+      items: [
+        { txt: 'Beli Xbox', link: '#beliXbox' },
+        { txt: 'Accesories', link: '#accesories' }
+      ]
+    },
+    {
+      title: 'Hiburan',
+      items: [
+        { txt: 'Game PC', link: '#gamePC' },
+        { txt: 'Permainan Windows', link: '#pWindows' }
+      ]
+    },
+    {
+      title: 'Bisnis',
+      items: [
+        { txt: 'Microsoft Cloud', link: '#microsoftCloud' },
+        { txt: 'Microsoft Security', link: '#microsoftSecurity' },
+        { txt: 'Azure', link: '#azure' },
+        { txt: 'Dynamics 365', link: '#dynamics365' },
+        { txt: 'Microsoft 365 untuk bisnis', link: '#microsoft365Business' },
+        { txt: 'Microsoft Industry', link: '#microsoftIndustry' },
+        { txt: 'Microsoft Power Platform', link: '#powerPlatform' },
+        { txt: 'Windows 365', link: '#windows365' }
+      ]
+    },
+    {
+      title: 'Pengembang & TI',
+      items: [
+        { txt: 'Pusat Pengembang', link: '#devCenter' },
+        { txt: 'Dokumentasi', link: '#documentation' },
+        { txt: 'Microsoft Learn', link: '#microsoftLearn' },
+        { txt: 'Microsoft Tech Community', link: '#techCommunity' },
+        { txt: 'Marketplace Azure', link: '#azureMarketplace' },
+        { txt: 'AppSource', link: '#appSource' },
+        { txt: 'Visual Studio', link: '#visualStudio' }
+      ]
+    },
+    {
+      title: 'Lainnya',
+      items: [
+        { txt: 'Unduhan & keamanan gratis', link: '#freeDownloads' },
+        { txt: 'Pendidikan', link: '#education' },
+        { txt: 'Licensing', link: '#licensing' }
+      ]
+    }
+  ];
+
+='\n'
+// Header
+.header
+  .container
+    .header__wrapper
+      button.burger-menu.js-burger-menu(type='button')
+        span.burger-menu__bar
+      a.header__logo(href='#')
+        img.header__logo__el(src='assets/img/logo/microsoft.png' alt='Microsoft Logo')
+      ='\n'
+      //header-menu
+      .header__menu
+        .header__menu__left
+          ul.header__nav
+            each val in otherNav
+              li.header__nav__item
+                ='\n'
+                a.header__nav__link(href=val.link) !{val.txt}
+        .header__menu__right
+          .header__menu__el
+            ul.header__nav
+              li.header__nav__item
+                ='\n'
+                a.header__nav__link.js-dropdown(href="#")
+                  | Semua Microsoft
+                  ='\n'
+                  img.arrow-down(src='assets/img/icon/arrow-down.svg' alt='icon-arrow')/
+                ='\n'
+                .header__nav__dropdown
+                  ul.header__nav__list
+                    each section in otherDropdown
+                      li.header__nav__items !{section.title}
+                        ul.header__nav__items
+                          each item in section.items
+                            li.header__items__child
+                              ='\n'
+                              a.header__nav__link(href=item.link) !{item.txt}
+                              ='\n'
+
+                  a.header__link(href="#")
+                    | LIHAT PETA SITUS
+                    img(src="assets/img/icon/arrow-right.svg", alt="icon arrow")
+          form.header__menu__search
+            .header__menu__input.js-search-box
+              ="\n"
+              a.header__nav__link(href="#" title="Cari di Microsoft.com")  Cari
+              ="\n"
+              img(src='assets/img/icon/search.svg', alt='icon search')/
+            .header__input.js-search-input
+              //- img.arrow-left(src="", alt="")
+              input#searchInput(type='text' placeholder="Cari di Microsoft.com")
+              button.close-input Batal
+          .header__menu__auth
+            .header__keranjang
+              ='\n'
+              a.header__nav__link Keranjang
+              ='\n'
+              img.header__keranjang__el(src="assets/img/icon/basket.svg", alt="icon keranjang")/
+            .header__login
+              ='\n'
+              a.header__login__link Masuk
+              ='\n'
+              img.header__login__el(src="assets/img/icon/user-add.svg", alt="icon user")/

@@ -1,0 +1,142 @@
+
+//-------------------------------------------------------------------------------
+  @name: Layout | Footer
+  @description: Footer
+  -------------------------------------------------------------------------------//
+
+//Data Footer
+-
+  const footerData = [
+    {
+      title: "Yang Baru",
+      items: [
+        { txt: "Microsoft Copilot", link: "#microsoftCopilot" },
+        { txt: "Microsoft 365", link: "#microsoft365" },
+        { txt: "Microsoft 365 Family", link: "#microsoft365Family" },
+        { txt: "Microsoft 365 Personal", link: "#microsoft365Personal" },
+        { txt: "Game PC", link: "#gamePC" },
+        { txt: "PC Game Pass", link: "#pcGamePass" },
+        { txt: "Windows 11 apps", link: "#windows11Apps" }
+      ]
+    },
+    {
+      title: "Microsoft Store",
+      items: [
+        { txt: "Profil akun", link: "#profilAkun" },
+        { txt: "Pusat Unduh", link: "#pusatUnduh" },
+        { txt: "Pengembalian", link: "#pengembalian" },
+        { txt: "Pelacakan pesanan", link: "#pelacakanPesanan" }
+      ]
+    },
+    {
+      title: "Pendidikan",
+      items: [
+        { txt: "Microsoft Education", link: "#microsoftEducation" },
+        { txt: "Perangkat untuk pendidikan", link: "#perangkatUntukPendidikan" },
+        { txt: "Microsoft Teams untuk pendidikan", link: "#microsoftTeamsUntukPendidikan" },
+        { txt: "Microsoft 365 Education", link: "#microsoft365Education" },
+        { txt: "Office Education", link: "#officeEducation" },
+        { txt: "Pelatihan dan pengembangan pengajar", link: "#pelatihanPengembanganPengajar" },
+        { txt: "Diskon untuk pelajar dan orang tua", link: "#diskonPelajarOrangTua" },
+        { txt: "Azure untuk pelajar", link: "#azureUntukPelajar" }
+      ]
+    },
+    {
+      title: "Bisnis",
+      items: [
+        { txt: "Microsoft Cloud", link: "#microsoftCloud" },
+        { txt: "Microsoft Security", link: "#microsoftSecurity" },
+        { txt: "Azure", link: "#azure" },
+        { txt: "Dynamic 365", link: "#dynamic365" },
+        { txt: "Microsoft 365", link: "#microsoft365Business" },
+        { txt: "Microsoft Advertising", link: "#microsoftAdvertising" },
+        { txt: "Copilot for Microsoft 365", link: "#copilotMicrosoft365" },
+        { txt: "Microsoft Teams", link: "#microsoftTeams" }
+      ]
+    },
+    {
+      title: "Pengembang & TI",
+      items: [
+        { txt: "Pusat Pengembang", link: "#pusatPengembang" },
+        { txt: "Dokumentasi", link: "#dokumentasi" },
+        { txt: "Microsoft Learn", link: "#microsoftLearn" },
+        { txt: "Microsoft Tech Community", link: "#microsoftTechCommunity" },
+        { txt: "Marketplace Azure", link: "#marketplaceAzure" },
+        { txt: "AppSource", link: "#appSource" },
+        { txt: "Microsoft Power Platform", link: "#microsoftPowerPlatform" },
+        { txt: "Visual Studio", link: "#visualStudio" }
+      ]
+    },
+    {
+      title: "Perusahaan",
+      items: [
+        { txt: "Karier", link: "#karier" },
+        { txt: "Tentang Microsoft", link: "#tentangMicrosoft" },
+        { txt: "Berita Perusahaan", link: "#beritaPerusahaan" },
+        { txt: "Privasi di Microsoft", link: "#privasiMicrosoft" },
+        { txt: "Investor", link: "#investor" },
+        { txt: "Keberlanjutan", link: "#keberlanjutan" }
+      ]
+    }
+  ]
+
+.footer
+  .container
+    .footer__wrapper.js-footer-accordion
+      each val in footerData
+        .footer__nav
+          h5.footer__nav__title
+            | !{ val.title}
+          ul.footer__nav__list
+            each item in val.items
+              li.footer__nav__item
+                a.footer__nav__link(href=item.link)
+                  | !{item.txt}
+    .footer__copyright
+      .footer__copyright__link
+        ='\n'
+        a.footer__country(href="#")
+          ='\n'
+          img.footer__country__img(src="assets/img/icon/earth.png", alt="icon earth")/
+          p.footer__nav__link
+            |Indonesia (Indonesia)
+        ='\n'
+        a.footer__nav__link(href="#")
+          | Pilihan Privasi Anda
+        ='\n'
+        a.footer__nav__link(href="#")
+          | Privasi Kesehatan Konsumen
+      .footer__corporate
+        ul.footer__nav__list
+          -
+            const corporateData = [
+              {
+                txt: "Hubungi Microsoft",
+                link: "#hubungiMicrosoft"
+              },
+              {
+                txt: "Privasi",
+                link: "#privasi"
+              },
+              {
+                txt: "Persyaratan Penggunaan",
+                link: "#syaratPenggunaan"
+              },
+              {
+                txt: "Merek dagang",
+                link: "#merekDagang"
+              },
+              {
+                txt: "Mengenai iklan kami",
+                link: "#iklanKami"
+              },
+              {
+                txt: "&#169 Microsoft 2024 ",
+                link: "#copyright"
+              }
+            ];
+          each val, index in corporateData
+            li.footer__nav__items
+              ='\n'
+              a.footer__nav__link(href=val.link)
+                | !{val.txt}
