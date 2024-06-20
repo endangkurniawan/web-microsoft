@@ -2,7 +2,6 @@
 @name: Footer
 @description: Js Footer
 --------------------------------------------------------------------------------- */
-
 const Footer = (() => {
   // - handleAccordionFooter
   const handleAccordionFooter = () => {
@@ -31,6 +30,15 @@ const Footer = (() => {
     });
   };
 
+  // - resetAccordionFooter
+  const resetAccordionFooter = () => {
+    if ($(window).width() > 575.86) {
+      $(".js-footer-accordion .footer__nav__list").removeAttr("style");
+      $(".js-footer-accordion .footer__nav").removeClass("footer__nav--active");
+      $(".js-footer-accordion .footer__nav__title").removeClass("active");
+    }
+  };
+
   // - init
   const init = () => {
     $(document).ready(() => {
@@ -42,6 +50,8 @@ const Footer = (() => {
 
   return {
     init,
+    resetAccordionFooter,
+    handleAccordionFooter,
   };
 })();
 

@@ -2,7 +2,7 @@
 import { Scrolllable, BrowserCheck } from "utilities";
 
 // --- components
-import { Header, Footer } from "components";
+import { Header, Footer, WindowResize } from "components";
 
 // --- App
 const App = (() => {
@@ -32,6 +32,7 @@ const App = (() => {
       // --- Project
       Header.init();
       Footer.init();
+      WindowResize.init();
     })(jQuery);
   };
 

@@ -130,13 +130,12 @@
                 txt: "Mengenai iklan kami",
                 link: "#iklanKami"
               },
-              {
-                txt: "&#169 Microsoft 2024 ",
-                link: "#copyright"
-              }
             ];
           each val, index in corporateData
             li.footer__nav__items
               ='\n'
               a.footer__nav__link(href=val.link)
                 | !{val.txt}
+
+          li.footer__nav__items
+            | &#169 Microsoft 2024
