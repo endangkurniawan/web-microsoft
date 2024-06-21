@@ -81,7 +81,12 @@
   .container
     .header__wrapper
       button.burger-menu.js-burger-menu(type='button')
-        span.burger-menu__bar
+        ='\n'
+        each val in [0, 1, 2]
+          ='\n'
+          span.burger-menu__bar
+          ='\n'
+        ='\n'
       a.header__logo(href='#')
         img.header__logo__el(src='assets/img/logo/microsoft.png' alt='Microsoft Logo')
       ='\n'
@@ -127,6 +132,7 @@
           //- img.arrow-left(src="", alt="")
           input#searchInput(type='text' placeholder="Cari di Microsoft.com")
           button.close-input Batal
+
       .header__auth
         .header__keranjang
           ='\n'

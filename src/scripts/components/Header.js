@@ -26,6 +26,10 @@ const Header = (() => {
       e.stopPropagation();
       $(e.currentTarget).toggleClass("active");
       $(".js-search-input").toggleClass("active");
+
+      if ($(".js-search-input").hasClass("active")) {
+        $("#searchInput").focus(); // Fokus ke input pencarian ketika aktif
+      }
     });
 
     $(".header__search .close-input").on("click", (e) => {
