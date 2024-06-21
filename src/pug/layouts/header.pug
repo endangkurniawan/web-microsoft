@@ -117,24 +117,24 @@
                   a.header__link(href="#")
                     | LIHAT PETA SITUS
                     img(src="assets/img/icon/arrow-right.svg", alt="icon arrow")
-          form.header__menu__search
-            .header__menu__input.js-search-box
-              ="\n"
-              a.header__nav__link(href="#" title="Cari di Microsoft.com")  Cari
-              ="\n"
-              img(src='assets/img/icon/search.svg', alt='icon search')/
-            .header__input.js-search-input
-              //- img.arrow-left(src="", alt="")
-              input#searchInput(type='text' placeholder="Cari di Microsoft.com")
-              button.close-input Batal
-          .header__menu__auth
-            .header__keranjang
-              ='\n'
-              a.header__nav__link Keranjang
-              ='\n'
-              img.header__keranjang__el(src="assets/img/icon/basket.svg", alt="icon keranjang")/
-            .header__login
-              ='\n'
-              a.header__login__link Masuk
-              ='\n'
-              img.header__login__el(src="assets/img/icon/user-add.svg", alt="icon user")/
+      form.header__search
+        .header__search__input.js-search-box
+          ="\n"
+          a.header__nav__link(href="#" title="Cari di Microsoft.com")  Cari
+          ="\n"
+          img(src='assets/img/icon/search.svg', alt='icon search')/
+        .header__input.js-search-input
+          //- img.arrow-left(src="", alt="")
+          input#searchInput(type='text' placeholder="Cari di Microsoft.com")
+          button.close-input Batal
+      .header__auth
+        .header__keranjang
+          ='\n'
+          a.header__nav__link Keranjang
+          ='\n'
+          img.header__keranjang__el(src="assets/img/icon/basket.svg", alt="icon keranjang")/
+        .header__login
+          ='\n'
+          a.header__login__link Masuk
+          ='\n'
+          img.header__login__el(src="assets/img/icon/user-add.svg", alt="icon user")/

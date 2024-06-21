@@ -8,21 +8,27 @@ const Header = (() => {
   //handleDropdownMenu
   const handleDropdownMenu = () => {
     $(".js-dropdown").on("click", (e) => {
-      e.stopPropagation(); // Prevent the click from propagating to the document
+      e.stopPropagation();
+      const _dropdown = $(e.currentTarget).siblings(".header__nav__dropdown");
       $(e.currentTarget).toggleClass("selected");
-      $(e.currentTarget).siblings(".header__nav__dropdown").toggle(300);
+
+      if ($(e.currentTarget).hasClass("selected")) {
+        _dropdown.slideDown(100);
+      } else {
+        _dropdown.slideUp(100);
+      }
     });
   };
 
   //handleSearchInput
   const handleSearchInput = () => {
     $(".js-search-box").on("click", (e) => {
-      e.stopPropagation(); // Prevent the click from propagating to the document
+      e.stopPropagation();
       $(e.currentTarget).toggleClass("active");
       $(".js-search-input").toggleClass("active");
     });
 
-    $(".header__menu__search .close-input").on("click", (e) => {
+    $(".header__search .close-input").on("click", (e) => {
       e.preventDefault();
       $(".js-search-input").removeClass("active");
     });
