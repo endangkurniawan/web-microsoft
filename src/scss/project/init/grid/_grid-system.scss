@@ -12,7 +12,8 @@
     padding-left: 32px;
     padding-right: 32px;
   }
-  @include small {
+
+  @include medium {
     padding-left: 24px;
     padding-right: 24px;
   }
