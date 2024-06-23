@@ -5,6 +5,43 @@
 
 //Header
 const Header = (() => {
+  const handleShowNavigation = () => {
+    $(".js-burger-menu").on("click", (e) => {
+      const _this = $(e.currentTarget);
+      handleToggleMenu(_this, _this.hasClass("show"));
+    });
+  };
+
+  // - handleCloseNav
+  const handleCloseNav = () => {
+    $(document).on("keyup", (e) => {
+      if (e.which === 27) {
+        if ($(".js-burger-menu").hasClass("show")) {
+          handleToggleMenu($(".js-burger-menu"), true);
+        }
+      }
+    });
+  };
+
+  // - handleToggleMenu
+  const handleToggleMenu = (selector, status) => {
+    if (status) {
+      $("body").removeClass("show-menu");
+      selector.removeClass("show");
+      Scrolllable.enable();
+    } else {
+      $("body").addClass("show-menu");
+      selector.addClass("show");
+      Scrolllable.disable();
+    }
+  };
+
+  // - handleHideMenu
+  const handleHideMenu = () => {
+    if ($(window).width() > 992) {
+      handleToggleMenu($(".js-burger-menu"), true);
+    }
+  };
   // handleDropdownMenu
   const handleDropdownMenu = () => {
     $(".js-dropdown").on("click", (e) => {
@@ -90,6 +127,8 @@ const Header = (() => {
   };
 
   const init = () => {
+    handleShowNavigation();
+    handleCloseNav();
     handleDropdownMenu();
     handleSearchInput();
     handleClickOutside();
@@ -98,6 +137,8 @@ const Header = (() => {
 
   return {
     init,
+    init,
+    hideMenu: handleHideMenu,
   };
 })();
 

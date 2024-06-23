@@ -1,4 +1,4 @@
-import Footer from "./Footer";
+import { Header, Footer } from "components";
 
 const WindowResize = (() => {
   let _timeout = false,
@@ -23,6 +23,7 @@ const WindowResize = (() => {
     } else {
       _timeout = false;
       $("body").removeClass("hold-transition");
+      Header.hideMenu();
       Footer.resetAccordionFooter();
       Footer.handleAccordionFooter();
     }
