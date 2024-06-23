@@ -101,17 +101,19 @@
         .header__menu__right
           .header__menu__el
             ul.header__nav
-              li.header__nav__item
+              li.header__nav__itemm
                 ='\n'
-                a.header__nav__link.js-dropdown(href="#")
+                a.header__nav__drop.js-dropdown(href="#")
                   | Semua Microsoft
                   ='\n'
                   img.arrow-down(src='assets/img/icon/arrow-down.svg' alt='icon-arrow')/
                 ='\n'
                 .header__nav__dropdown
-                  ul.header__nav__list
+                  ul.header__nav__list.js-header-accordion
                     each section in otherDropdown
-                      li.header__nav__item !{section.title}
+                      li.header__nav__item
+                        h5.header__nav__title
+                         | !{section.title}
                         ul.header__nav__items
                           each item in section.items
                             li.header__items__child
