@@ -19,5 +19,12 @@
     &:last-child {
       margin-bottom: 0;
     }
+    @include x-small {
+      width: 22px;
+    }
+  }
+  @include x-small {
+    width: 40px;
+    height: 40px;
   }
 }

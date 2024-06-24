@@ -17,6 +17,10 @@
     padding-left: 24px;
     padding-right: 24px;
   }
+  @include x-small {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
 }
 
 .main-site {

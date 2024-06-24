@@ -7,23 +7,19 @@
 const Header = (() => {
   const handleShowNavigation = () => {
     $(".js-burger-menu").on("click", (e) => {
-      const _this = $(e.currentTarget);
-      handleToggleMenu(_this, _this.hasClass("show"));
+      const $this = $(e.currentTarget);
+      handleToggleMenu($this, $this.hasClass("show"));
     });
   };
 
-  // - handleCloseNav
   const handleCloseNav = () => {
     $(document).on("keyup", (e) => {
-      if (e.which === 27) {
-        if ($(".js-burger-menu").hasClass("show")) {
-          handleToggleMenu($(".js-burger-menu"), true);
-        }
+      if (e.which === 27 && $(".js-burger-menu").hasClass("show")) {
+        handleToggleMenu($(".js-burger-menu"), true);
       }
     });
   };
 
-  // - handleToggleMenu
   const handleToggleMenu = (selector, status) => {
     if (status) {
       $("body").removeClass("show-menu");
@@ -36,16 +32,15 @@ const Header = (() => {
     }
   };
 
-  // - handleHideMenu
   const handleHideMenu = () => {
     if ($(window).width() > 992) {
       handleToggleMenu($(".js-burger-menu"), true);
     }
   };
-  // handleDropdownMenu
+
   const handleDropdownMenu = () => {
     $(".js-dropdown").on("click", (e) => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 992) {
         e.stopPropagation();
         const $dropdown = $(e.currentTarget).siblings(".header__nav__dropdown");
         $(e.currentTarget).toggleClass("selected");
@@ -59,7 +54,6 @@ const Header = (() => {
     });
   };
 
-  // handleSearchInput
   const handleSearchInput = () => {
     $(".js-search-box").on("click", (e) => {
       e.stopPropagation();
@@ -77,10 +71,9 @@ const Header = (() => {
     });
   };
 
-  // menutup dengan handle klik sembarang untuk dropdown dan input
   const handleClickOutside = () => {
     $(document).on("click", (e) => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 992) {
         if (
           !$(e.target).closest(".js-dropdown").length &&
           !$(e.target).closest(".header__nav__dropdown").length
@@ -99,10 +92,9 @@ const Header = (() => {
     });
   };
 
-  // handleAccodionHeader
   const handleAccordionHeader = () => {
     $(".js-header-accordion .header__nav__title").on("click", (e) => {
-      if ($(window).width() <= 768) {
+      if ($(window).width() <= 992) {
         const _this = $(e.currentTarget);
         const _navItem = _this.parents(".header__nav__item");
         const _itemSibling = _navItem.siblings(".header__nav__item");
@@ -136,7 +128,6 @@ const Header = (() => {
   };
 
   return {
-    init,
     init,
     hideMenu: handleHideMenu,
   };
