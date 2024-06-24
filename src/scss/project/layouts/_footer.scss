@@ -2,6 +2,7 @@
 // Layout: Footer
 //-------------------------------------------------------------------------------
 .footer {
+  display: none;
   $ft: &;
   position: absolute;
   left: 0;
@@ -29,20 +30,6 @@
       }
     }
   }
-
-  // &__navLeft,
-  // &__navRight {
-  //   display: flex;
-  //   width: 48%;
-  //   flex-wrap: wrap;
-  //   @include large {
-  //     justify-content: space-between;
-  //     width: 100%;
-  //   }
-  //   @include x-small {
-  //     display: block;
-  //   }
-  // }
 
   &__nav {
     padding: 0 8px;
