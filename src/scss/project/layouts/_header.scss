@@ -283,12 +283,12 @@
     margin-right: 24px;
     @include mq(1400px) {
       margin-right: 8px;
+      justify-content: space-between;
     }
 
     @include medium {
       position: absolute;
       left: 48px;
-      // top: 0;
       width: 95%;
     }
     & a {
