@@ -2,6 +2,7 @@
 // Layout: Footer
 //-------------------------------------------------------------------------------
 .footer {
+  // display: none;
   $ft: &;
   position: absolute;
   left: 0;
@@ -183,9 +184,9 @@
     }
   }
 
-  &__corporate {
+  &__page-link {
     float: right;
-    #{$ft}__nav__list {
+    &__list {
       list-style: none;
       padding: 0;
       margin: 0;
@@ -203,7 +204,7 @@
         flex-wrap: wrap;
       }
     }
-    #{$ft}__nav__items {
+    &__item {
       @include font-size(small);
       float: left;
       padding: 0 24px 4px 0;

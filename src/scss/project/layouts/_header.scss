@@ -12,7 +12,7 @@
   width: 100%;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   overflow: visible;
-
+  background-color: color(secondary);
   @include medium {
     padding: 8px 0;
   }
@@ -59,6 +59,9 @@
       height: 100%;
       display: block;
     }
+    @include medium {
+      margin-right: 0;
+    }
   }
 
   &__menu {
@@ -71,18 +74,22 @@
       display: block;
       position: absolute;
       top: 56px;
-      left: 0;
-      bottom: 0;
-      width: 100%;
+      left: -24px;
+      width: 107%;
+      padding-left: 24px;
+      padding-right: 24px;
       opacity: 0;
+      background-color: color(secondary);
       visibility: hidden;
       transform: translateY(-20px);
       transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-
       .show-menu & {
         opacity: 1;
         visibility: visible;
         transform: translateY(0);
+      }
+      @include small {
+        left: -14px;
       }
     }
     &__left {
@@ -132,7 +139,7 @@
       // }
 
       #{$h}__nav {
-        &__drop {
+        &__drop-title {
           @include font-size(small);
           font-weight: normal;
           text-decoration: none;
@@ -156,11 +163,19 @@
           @include medium {
             display: block;
             top: 0;
-            left: 50%;
-            background-color: transparent;
-            padding: 0;
+            left: 46%;
+            // background-color: color(secondary);
+            background-color: color(secondary);
+            padding: 0 24px 0 80px;
             border: none;
-            width: 100%;
+            width: 114%;
+          }
+          @include small {
+            padding-left: 76px;
+          }
+          @include x-small {
+            width: 124%;
+            padding-left: 48px;
           }
         }
 
@@ -245,7 +260,6 @@
 
       #{$h}__link {
         display: block;
-        background-color: color(tertiary);
         width: 100%;
         text-align: center;
         padding: 6px;
@@ -259,9 +273,9 @@
     margin-bottom: 24px;
     &:nth-child(1) {
       margin-top: 24px;
-      margin: 0;
       @include medium {
         padding-top: 2px;
+        margin-bottom: 16px;
       }
     }
     &:last-child {
@@ -291,6 +305,10 @@
       left: 48px;
       width: 95%;
     }
+
+    @include x-small {
+      width: 90%;
+    }
     & a {
       @include font-size(small);
       @include mq(1400px) {
@@ -308,11 +326,14 @@
     position: absolute;
     top: 0;
     right: 0;
-    background-color: white;
+    background-color: color(secondary);
     padding: 8px;
-    width: 90%;
+    width: 88%;
     z-index: zi(other);
     @include font-size(small);
+    @include x-small {
+      right: 12px;
+    }
     &.active {
       display: flex;
       @include medium {
@@ -334,6 +355,17 @@
       border: 1px solid #000;
       @include medium {
         display: none;
+      }
+    }
+    & .arrow-close {
+      display: none;
+      height: 24px;
+      opacity: 0.8;
+      @include medium {
+        display: block;
+        position: absolute;
+        right: 24px;
+        top: 14px;
       }
     }
   }

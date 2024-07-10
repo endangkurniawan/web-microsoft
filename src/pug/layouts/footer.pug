@@ -106,8 +106,8 @@
         ='\n'
         a.footer__nav__link(href="#")
           | Privasi Kesehatan Konsumen
-      .footer__corporate
-        ul.footer__nav__list
+      .footer__page-link
+        ul.footer__page-link__list
           -
             const corporateData = [
               {
@@ -132,10 +132,10 @@
               },
             ];
           each val, index in corporateData
-            li.footer__nav__items
+            li.footer__page-link__item
               ='\n'
-              a.footer__nav__link(href=val.link)
+              a.footer__page-link__link(href=val.link)
                 | !{val.txt}
 
-          li.footer__nav__items
+          li.footer__page-link__item
             | &#169 Microsoft 2024

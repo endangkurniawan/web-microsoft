@@ -103,7 +103,7 @@
             ul.header__nav
               li.header__nav__itemm
                 ='\n'
-                a.header__nav__drop.js-dropdown(href="#")
+                a.header__nav__drop-title.js-dropdown(href="#")
                   | Semua Microsoft
                   ='\n'
                   img.arrow-down(src='assets/img/icon/arrow-down.svg' alt='icon-arrow')/
@@ -131,9 +131,9 @@
           ="\n"
           img(src='assets/img/icon/search.svg', alt='icon search')/
         .header__input.js-search-input
-          //- img.arrow-left(src="", alt="")
           input#searchInput(type='text' placeholder="Cari di Microsoft.com")
           button.close-input Batal
+          img.arrow-close(src="assets/img/icon/close.png", alt="icon close")/
 
       .header__auth
         .header__keranjang

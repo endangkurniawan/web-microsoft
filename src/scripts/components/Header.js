@@ -24,6 +24,9 @@ const Header = (() => {
     if (status) {
       $("body").removeClass("show-menu");
       selector.removeClass("show");
+      $(".header__nav__item--active .header__nav__items").slideUp(300);
+      $(".header__nav__item").removeClass("header__nav__item--active");
+      $(".header__nav__title").removeClass("active");
       Scrolllable.enable();
     } else {
       $("body").addClass("show-menu");
@@ -65,7 +68,7 @@ const Header = (() => {
       }
     });
 
-    $(".header__menu__search .close-input").on("click", (e) => {
+    $(".header__menu__search .close-input, .arrow-close").on("click", (e) => {
       e.preventDefault();
       $(".js-search-input").removeClass("active");
     });
