@@ -90,6 +90,7 @@
           ul.footer__nav__list
             each item in val.items
               li.footer__nav__item
+                ='\n'
                 a.footer__nav__link(href=item.link)
                   | !{item.txt}
     .footer__copyright
@@ -101,15 +102,18 @@
           p.footer__nav__link
             |Indonesia (Indonesia)
         ='\n'
-        a.footer__nav__link(href="#")
-          | Pilihan Privasi Anda
+        a.footer__privasi(href="#")
+          ='\n'
+          img(src="assets/img/icon/close-ceklis.svg", alt="icon ceklis")/
+          p.footer__nav__link
+            | Pilihan Privasi Anda
         ='\n'
         a.footer__nav__link(href="#")
           | Privasi Kesehatan Konsumen
       .footer__page-link
         ul.footer__page-link__list
           -
-            const corporateData = [
+            const pageLink = [
               {
                 txt: "Hubungi Microsoft",
                 link: "#hubungiMicrosoft"
@@ -131,7 +135,7 @@
                 link: "#iklanKami"
               },
             ];
-          each val, index in corporateData
+          each val, index in pageLink
             li.footer__page-link__item
               ='\n'
               a.footer__page-link__link(href=val.link)

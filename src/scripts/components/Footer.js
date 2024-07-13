@@ -42,12 +42,23 @@ const Footer = (() => {
     }
   };
 
+  // - hanlePaddingBottomMain
+  const handlePaddingBottomMain = () => {
+    if ($(window).width() > 320) {
+      const _heightFooter = $(".footer").innerHeight();
+      $(".js-main-site").css("padding-bottom", `${_heightFooter}px`);
+    } else {
+      $(".js-main-site").removeAttr("style");
+    }
+  };
+
   // - init
   const init = () => {
     $(document).ready(() => {
       if ($(".footer").length) {
         handleAccordionFooter();
         $(window).on("resize", resetAccordionFooter); // reset accordion saat window diresize
+        handlePaddingBottomMain();
       }
     });
   };
@@ -56,6 +67,7 @@ const Footer = (() => {
     init,
     resetAccordionFooter,
     handleAccordionFooter,
+    setPaddingBottomMain: handlePaddingBottomMain,
   };
 })();
 

@@ -26,6 +26,7 @@ const WindowResize = (() => {
       Header.hideMenu();
       Footer.resetAccordionFooter();
       Footer.handleAccordionFooter();
+      Footer.setPaddingBottomMain();
     }
   };
 
