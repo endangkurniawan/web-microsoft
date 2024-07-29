@@ -50,55 +50,18 @@
       @include x-small {
         cursor: pointer;
         padding-top: 26px;
-        // position: relative;
-        // &::after {
-        //   content: "";
-        //   display: block;
-        //   width: 16px;
-        //   height: 16px;
-        //   background-image: url(../img/icon/chevron-arrow.svg);
-        //   background-repeat: no-repeat;
-        //   background-size: contain;
-        //   right: 0;
-        //   bottom: 12px;
-        //   transform: rotateX(180deg);
-        //   position: absolute;
-        //   transition: transform 0.3s ease;
-        // }
       }
     }
-
-    // &--active {
-    //   #{$ft} {
-    //     &__nav__title::after {
-    //       transform: none;
-    //       transition: transform 0.3s ease;
-    //     }
-    //     &__nav__item {
-    //       opacity: 1;
-    //       transform: none;
-    //       transition-delay: 200ms;
-    //     }
-    //   }
-    // }
 
     &__list {
       list-style: none;
       padding: 0;
       margin: 0;
-      @include x-small {
-        // display: none;
-      }
     }
 
     &__item {
       padding: 8px 0;
       @include font-size(small);
-      // @include x-small {
-      //   opacity: 0;
-      //   transform: translateX(-10px);
-      //   transition: all 0.3s ease;
-      // }
     }
 
     &__link {

@@ -71,7 +71,7 @@
     @include medium {
       display: block;
       position: absolute;
-      top: 56px;
+      top: 48px;
       left: -24px;
       width: 107%;
       padding-left: 24px;
@@ -268,6 +268,10 @@
         padding: 6px;
         text-decoration: none;
         @include font-size(label);
+        @include medium {
+          padding-left: 0;
+          text-align: left;
+        }
       }
     }
   }
