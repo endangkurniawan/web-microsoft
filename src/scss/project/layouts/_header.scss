@@ -150,6 +150,13 @@
             display: none;
           }
         }
+        .selected {
+          & img {
+            transform: rotateX(180deg);
+            transition: transform 0.3s ease;
+          }
+        }
+
         &__dropdown {
           position: absolute;
           top: 48px;
@@ -335,9 +342,12 @@
     right: 0;
     background-color: color(secondary);
     padding: 8px;
-    width: 88%;
+    width: 90%;
     z-index: zi(other);
     @include font-size(small);
+    @include large {
+      width: 88%;
+    }
     @include x-small {
       right: 12px;
     }

@@ -12,10 +12,23 @@ const Header = (() => {
     });
   };
 
-  const handleCloseNav = () => {
+  const handleCloseEscp = () => {
     $(document).on("keyup", (e) => {
-      if (e.which === 27 && $(".js-burger-menu").hasClass("show")) {
-        handleToggleMenu($(".js-burger-menu"), true);
+      if (e.which === 27) {
+        // ESC key
+        if ($(".js-burger-menu").hasClass("show")) {
+          handleToggleMenu($(".js-burger-menu"), true);
+        }
+
+        if ($(".js-dropdown").hasClass("selected")) {
+          $(".js-dropdown").removeClass("selected");
+          $(".header__nav__dropdown").slideUp(100);
+        }
+
+        if ($(".js-search-input").hasClass("active")) {
+          $(".js-search-input").removeClass("active");
+          $(".js-search-input input").val(""); // Clear input value
+        }
       }
     });
   };
@@ -68,9 +81,12 @@ const Header = (() => {
       }
     });
 
-    $(".header__menu__search .close-input, .arrow-close").on("click", (e) => {
+    // Revisi untuk close input
+    $(".header__search .close-input, .arrow-close").on("click", (e) => {
       e.preventDefault();
+      console.log("Close button clicked"); // Debugging
       $(".js-search-input").removeClass("active");
+      $(".js-search-input input").val(""); // Clear input value
     });
   };
 
@@ -123,7 +139,7 @@ const Header = (() => {
 
   const init = () => {
     handleShowNavigation();
-    handleCloseNav();
+    handleCloseEscp();
     handleDropdownMenu();
     handleSearchInput();
     handleClickOutside();
