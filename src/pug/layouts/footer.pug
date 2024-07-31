@@ -94,21 +94,22 @@
                 a.footer__nav__link(href=item.link)
                   | !{item.txt}
     .footer__copyright
-      .footer__copyright__link
-        ='\n'
-        a.footer__country(href="#")
+      ul.footer__copyright__list
+        li.footer__copyright__item(href="#")
           ='\n'
-          img.footer__country__img(src="assets/img/icon/earth.png", alt="icon earth")/
-          p.footer__nav__link
+          img.footer__copyright__img(src="assets/img/icon/earth.png", alt="icon earth")/
+          ='\n'
+          a.footer__copyright__link
             |Indonesia (Indonesia)
-        ='\n'
-        a.footer__privasi(href="#")
+        li.footer__copyright__item(href="#")
           ='\n'
-          img(src="assets/img/icon/close-ceklis.svg", alt="icon ceklis")/
-          p.footer__nav__link
+          img.footer__copyright__img(src="assets/img/icon/close-ceklis.svg", alt="icon ceklis")/
+          ='\n'
+          a.footer__copyright__link
             | Pilihan Privasi Anda
-        ='\n'
-        a.footer__nav__link(href="#")
+        li.footer__copyright__item(href="#")
+          ='\n'
+          a.footer__copyright__link
           | Privasi Kesehatan Konsumen
       .footer__page-link
         ul.footer__page-link__list
