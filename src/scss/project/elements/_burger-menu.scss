@@ -12,7 +12,7 @@
   padding: 0;
   &__bar {
     width: 26px;
-    height: 3px;
+    height: 2px;
     display: block;
     background-color: color(black);
     margin: 0 auto 4px;
@@ -22,9 +22,5 @@
     @include x-small {
       width: 22px;
     }
-  }
-  @include x-small {
-    width: 40px;
-    height: 40px;
   }
 }

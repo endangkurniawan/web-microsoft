@@ -14,7 +14,7 @@
   overflow: visible;
   background-color: color(secondary);
   @include medium {
-    padding: 0;
+    padding: 4px 0;
   }
 
   &__wrapper {
@@ -34,14 +34,14 @@
         .show-menu & {
           transition-delay: 100ms;
           &:nth-child(1) {
-            transform: rotate(45deg) translate(5px, 5px);
+            transform: rotate(45deg) translate(4px, 4px);
             transition-delay: 0.15s;
           }
           &:nth-child(2) {
             opacity: 0;
           }
           &:nth-child(3) {
-            transform: rotate(-45deg) translate(5px, -5px);
+            transform: rotate(-45deg) translate(4px, -4px);
             transition-delay: 0.15s;
           }
         }
@@ -70,10 +70,11 @@
     position: relative;
     @include medium {
       display: block;
-      position: absolute;
-      top: 48px;
-      left: -24px;
-      width: 107%;
+      position: fixed;
+      top: 56px;
+      left: 0;
+      bottom: 0;
+      width: 100%;
       padding-left: 24px;
       padding-right: 24px;
       opacity: 0;
@@ -86,15 +87,17 @@
         visibility: visible;
         transform: translateY(0);
       }
-      @include small {
-        top: 48px;
-        left: -24px;
-      }
-
-      @include x-small {
-        top: 40px;
-      }
     }
+
+    @include small {
+      overflow-y: auto;
+    }
+
+    @include x-small {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
     &__left {
       #{$h}__nav {
         display: flex;
@@ -135,11 +138,10 @@
 
       #{$h}__menu__el {
         margin-right: 16px;
+        @include medium {
+          margin-right: 0;
+        }
       }
-      // & .selected {
-      //   // background-color: color(primary);
-
-      // }
 
       #{$h}__nav {
         &__drop-title {
@@ -171,21 +173,13 @@
             left: 50%;
           }
           @include medium {
+            position: static;
             display: block;
-            top: 0;
-            left: 46%;
-            // background-color: color(secondary);
             background-color: color(secondary);
-            padding: 0 24px 0 80px;
+            padding: 0;
             border: none;
-            width: 114%;
-          }
-          @include small {
-            padding-left: 76px;
-          }
-          @include x-small {
-            width: 124%;
-            padding-left: 48px;
+            left: 0;
+            transform: none;
           }
         }
 
