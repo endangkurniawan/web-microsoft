@@ -1,3 +1,8 @@
+/* ------------------------------------------------------------------------------
+@name: Window Resize
+@description: Windod Resize Handle
+--------------------------------------------------------------------------------- */
+
 import { Header, Footer } from "components";
 
 const WindowResize = (() => {
@@ -24,8 +29,7 @@ const WindowResize = (() => {
       _timeout = false;
       $("body").removeClass("hold-transition");
       Header.hideMenu();
-      Footer.resetAccordionFooter();
-      Footer.handleAccordionFooter();
+      Header.closeDropdowns();
       Footer.setPaddingBottomMain();
     }
   };

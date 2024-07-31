@@ -46,6 +46,7 @@ const Header = (() => {
     } else {
       $("body").addClass("show-menu");
       selector.addClass("show");
+      $(".header__nav__dropdown").show(); // Ensure dropdown is shown in mobile
       Scrolllable.disable();
     }
   };
@@ -53,6 +54,8 @@ const Header = (() => {
   const handleHideMenu = () => {
     if ($(window).width() > 992) {
       handleToggleMenu($(".js-burger-menu"), true);
+    } else {
+      $(".header__nav__dropdown").hide(); // Hide dropdown menu when switching to mobile
     }
   };
 
@@ -139,6 +142,12 @@ const Header = (() => {
     });
   };
 
+  // Fungsi baru untuk menutup semua dropdown
+  const closeDropdowns = () => {
+    $(".js-dropdown").removeClass("selected");
+    $(".header__nav__dropdown").slideUp(100);
+  };
+
   const init = () => {
     handleShowNavigation();
     handleCloseEscp();
@@ -151,6 +160,7 @@ const Header = (() => {
   return {
     init,
     hideMenu: handleHideMenu,
+    closeDropdowns, // Tambahkan fungsi ke return object
   };
 })();
 

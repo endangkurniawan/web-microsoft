@@ -21,9 +21,15 @@
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    padding: 36px 0 30px;
     @include large {
       flex-wrap: wrap;
     }
+
+    @include medium {
+      padding-bottom: 0;
+    }
+
     @include x-small {
       display: block;
     }
@@ -36,20 +42,21 @@
       width: 33%;
     }
     @include medium {
-      padding: 0 12px;
+      padding: 0 12px 30px;
     }
 
     @include x-small {
       width: 100%;
       padding: 0;
+      margin-bottom: 36px;
     }
+
     &__title {
       @include font-size(body);
-      padding: 36px 0 4px;
+      // padding: 36px 0 4px;
       margin: 0;
       @include x-small {
         cursor: pointer;
-        padding-top: 26px;
       }
     }
 
@@ -85,7 +92,7 @@
   }
 
   &__copyright {
-    padding: 30px 8px 16px 0;
+    padding: 0 8px 16px 0;
     @include font-size(small);
     color: color(primary);
     display: flex;
@@ -98,7 +105,7 @@
       padding-right: 20px;
     }
     @include medium {
-      padding: 30px 12px 16px 0;
+      padding: 0 12px 16px 0;
     }
 
     @include x-small {
