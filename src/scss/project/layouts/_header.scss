@@ -29,8 +29,14 @@
     display: none;
     @include medium {
       display: block;
+      body.close-input & {
+        visibility: hidden;
+      }
       &__bar {
         transition: all 0.3s ease 300ms;
+        body.close-input & {
+          transition: none;
+        }
         .show-menu & {
           transition-delay: 100ms;
           &:nth-child(1) {
@@ -75,8 +81,7 @@
       left: 0;
       bottom: 0;
       width: 100%;
-      padding-left: 24px;
-      padding-right: 24px;
+      padding: 0;
       opacity: 0;
       background-color: color(secondary);
       visibility: hidden;
@@ -110,9 +115,12 @@
           @include medium {
             padding: 0;
             @include font-size(label);
-            padding: 14px 24px 15px 0;
             border-bottom: solid 1px rgba(0, 0, 0, 0.07);
           }
+        }
+        &__link {
+          display: block;
+          padding: 14px 24px 16px 24px;
         }
       }
     }
@@ -125,8 +133,8 @@
         display: block;
         padding: 0;
         width: 100%;
-        height: 100%;
       }
+
       .arrow-down {
         margin-left: 6px;
         width: 8px;
@@ -225,10 +233,13 @@
           }
           @include medium {
             font-weight: normal;
-            padding: 14px 24px 15px 0;
+            padding: 14px 24px 16px 24px;
             width: 100%;
             position: relative;
             cursor: pointer;
+            &.active {
+              border-bottom: solid 1px rgba(0, 0, 0, 0.07);
+            }
             &::after {
               content: "";
               display: block;
@@ -237,8 +248,8 @@
               background-image: url(../img/icon/chevron-arrow.svg);
               background-repeat: no-repeat;
               background-size: contain;
-              right: 4px;
-              bottom: 12px;
+              right: 24px;
+              bottom: 20px;
               transform: rotateX(180deg);
               position: absolute;
               transition: transform 0.3s ease;
@@ -250,7 +261,7 @@
         &__items {
           @include medium {
             display: none;
-            padding: 0 0 16px 8px;
+            padding-left: 32px;
           }
         }
 
@@ -259,6 +270,8 @@
           color: color(primary);
           @include medium {
             @include font-size(label);
+            display: block;
+            padding: 14px 24px 16px 16px;
           }
         }
       }
@@ -271,7 +284,7 @@
         text-decoration: none;
         @include font-size(label);
         @include medium {
-          padding-left: 0;
+          padding: 14px 24px 16px;
           text-align: left;
         }
       }
@@ -280,11 +293,11 @@
 
   #{$h}__items__child {
     margin-bottom: 24px;
+
     &:nth-child(1) {
       margin-top: 24px;
       @include medium {
-        padding-top: 2px;
-        margin-bottom: 16px;
+        margin: 0;
       }
     }
     &:last-child {
@@ -292,10 +305,34 @@
     }
     @include medium {
       width: 100%;
-      margin-bottom: 16px;
+      // margin-bottom: 16px;
+      margin: 0;
       opacity: 0;
       transform: translateY(-10px);
       transition: all 0.3s ease;
+      border-bottom: solid 1px rgba(0, 0, 0, 0.07);
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+  }
+
+  &__close-arrow {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    display: none;
+    &-el {
+      display: block;
+      width: 32px;
+      height: 24px !important;
+    }
+    @include medium {
+      body.close-input & {
+        display: block;
+        position: absolute;
+        left: -40px;
+      }
     }
   }
 
@@ -313,6 +350,7 @@
       position: absolute;
       left: 48px;
       width: 95%;
+      margin-right: 0;
     }
 
     @include x-small {
@@ -369,15 +407,15 @@
         display: none;
       }
     }
-    & .arrow-close {
+    & .icon__search {
       display: none;
-      height: 24px;
+      height: 16px;
       opacity: 0.8;
       @include medium {
         display: block;
         position: absolute;
-        right: 24px;
-        top: 14px;
+        right: 32px;
+        top: 18px;
       }
     }
   }

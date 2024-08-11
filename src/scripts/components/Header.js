@@ -29,7 +29,11 @@ const Header = (() => {
 
         if ($(".js-search-input").hasClass("active")) {
           $(".js-search-input").removeClass("active");
-          $(".js-search-input input").val(""); // Clear input value
+          $(".js-search-input input").val("");
+        }
+
+        if ($("body").hasClass("close-input")) {
+          $("body").removeClass("close-input");
         }
       }
     });
@@ -39,14 +43,14 @@ const Header = (() => {
     if (status) {
       $("body").removeClass("show-menu");
       selector.removeClass("show");
-      $(".header__nav__item--active .header__nav__items").slideUp(300);
+      $(".header__nav__item--active .header__nav__items").slideUp(200);
       $(".header__nav__item").removeClass("header__nav__item--active");
       $(".header__nav__title").removeClass("active");
       Scrolllable.enable();
     } else {
       $("body").addClass("show-menu");
       selector.addClass("show");
-      $(".header__nav__dropdown").show(); // Ensure dropdown is shown in mobile
+      $(".header__nav__dropdown").show();
       Scrolllable.disable();
     }
   };
@@ -55,7 +59,7 @@ const Header = (() => {
     if ($(window).width() > 992) {
       handleToggleMenu($(".js-burger-menu"), true);
     } else {
-      $(".header__nav__dropdown").hide(); // Hide dropdown menu when switching to mobile
+      $(".header__nav__dropdown").hide();
     }
   };
 
@@ -78,20 +82,30 @@ const Header = (() => {
   const handleSearchInput = () => {
     $(".js-search-box").on("click", (e) => {
       e.stopPropagation();
+      closeDropdowns();
+
+      // Tutup navigasi jika sedang terbuka
+      if ($(".js-burger-menu").hasClass("show")) {
+        handleToggleMenu($(".js-burger-menu"), true);
+      }
+
+      // Toggle kelas active pada search box
       $(e.currentTarget).toggleClass("active");
       $(".js-search-input").toggleClass("active");
 
-      if ($(e.currentTarget).hasClass("active")) {
+      if ($(".js-search-input").hasClass("active")) {
+        $("body").addClass("close-input");
         $(".js-search-input input").focus();
+      } else {
+        $("body").removeClass("close-input");
       }
     });
 
-    // Revisi untuk close input
-    $(".header__search .close-input, .arrow-close").on("click", (e) => {
+    $(".header__search .header__close-arrow").on("click", (e) => {
       e.preventDefault();
-      console.log("Close button clicked"); // Debugging
       $(".js-search-input").removeClass("active");
-      $(".js-search-input input").val(""); // Clear input value
+      $(".js-search-input input").val("");
+      $("body").removeClass("close-input");
     });
   };
 
@@ -142,7 +156,7 @@ const Header = (() => {
     });
   };
 
-  // Fungsi baru untuk menutup semua dropdown
+  // Fungsi untuk menutup semua dropdown
   const closeDropdowns = () => {
     $(".js-dropdown").removeClass("selected");
     $(".header__nav__dropdown").slideUp(100);
@@ -160,7 +174,7 @@ const Header = (() => {
   return {
     init,
     hideMenu: handleHideMenu,
-    closeDropdowns, // Tambahkan fungsi ke return object
+    closeDropdowns,
   };
 })();
 

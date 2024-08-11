@@ -125,6 +125,8 @@
                     | LIHAT PETA SITUS
                     img(src="assets/img/icon/arrow-right.svg", alt="icon arrow")
       form.header__search
+        button.header__close-arrow
+          img.header__close-arrow-el(src="assets/img/icon/left-arrow.png", alt="arrow left")/
         .header__search__input.js-search-box
           ="\n"
           a.header__nav__link(href="#" title="Cari di Microsoft.com")  Cari
@@ -133,7 +135,7 @@
         .header__input.js-search-input
           input#searchInput(type='text' placeholder="Cari di Microsoft.com")
           button.close-input Batal
-          img.arrow-close(src="assets/img/icon/close.png", alt="icon close")/
+          img.icon__search(src="assets/img/icon/search.svg", alt="icon close")/
 
       .header__auth
         .header__keranjang
