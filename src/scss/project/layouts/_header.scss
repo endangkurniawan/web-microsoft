@@ -98,11 +98,6 @@
       overflow-y: auto;
     }
 
-    @include x-small {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
     &__left {
       #{$h}__nav {
         display: flex;
