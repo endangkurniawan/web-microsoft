@@ -1,0 +1,175 @@
+/* ==========================================================================
+   Components Hero Banner
+   ========================================================================== */
+
+.hero-banner {
+  &__item {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__content {
+    position: relative;
+  }
+  &__background {
+    margin-left: -240px;
+    margin-right: -240px;
+    height: auto;
+    max-height: 600px;
+    overflow-x: visible;
+    @include large {
+      height: 568px;
+      margin: 0 -32px;
+    }
+    @include medium {
+      margin: 0 -24px;
+    }
+    @include x-small {
+      margin: 0 -12px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    &.img--dekstop {
+      @include large {
+        display: none !important;
+      }
+    }
+    &.img--mobile {
+      display: none !important;
+      @include large {
+        display: block !important;
+      }
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    max-width: 560px;
+    padding: 48px;
+    @include large {
+      position: relative;
+      bottom: 40px;
+      min-width: 100%;
+      background-color: color(white);
+      left: 0;
+      transform: none;
+      box-shadow: 0 0.1875rem 0.4375rem 0 rgba(0, 0, 0, 0.13),
+        0 0.0625rem 0.125rem 0 rgba(0, 0, 0, 0.11);
+    }
+    @include medium {
+      position: static;
+      box-shadow: 0 0.1875rem 0.4375rem rgba(0, 0, 0, 0.13),
+        0 0.0625rem 0.125rem rgba(0, 0, 0, 0.11);
+      padding: 24px 24px 16px;
+      padding-left: -24px;
+    }
+  }
+
+  &__title {
+    @include font-size(h2);
+    margin-bottom: 24px;
+  }
+
+  &__desc {
+    @include font-size(body);
+    margin-bottom: 24px;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+  }
+
+  &__link {
+    text-decoration: none;
+    padding: 8px 42px 8px 24px;
+    position: relative;
+    &::after {
+      content: "";
+      display: block;
+      width: 42px;
+      height: 42px;
+      background-image: url(../img/icon/arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      right: 0;
+      top: 0;
+      transition: transform 0.3s ease;
+    }
+    &:hover::after {
+      transform: translateX(4px);
+    }
+  }
+}
+
+.owl-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.owl-prev {
+  margin-right: 64px;
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateX(-4px);
+  }
+}
+
+.owl-next {
+  transition: transform 0.3s ease;
+  &:hover {
+    transform: translateX(4px);
+  }
+}
+
+.owl-prev,
+.owl-nav {
+  & span {
+    @include font-size(h2);
+    padding: 16px !important;
+  }
+}
+
+.owl-dots {
+  display: flex;
+  align-items: center;
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  justify-content: center;
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  min-width: 40px;
+  transform: translateX(-50%);
+  button {
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+    span {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: color(primary);
+      opacity: 0.6;
+      display: block;
+    }
+    &.active {
+      span {
+        opacity: 1;
+      }
+    }
+  }
+}

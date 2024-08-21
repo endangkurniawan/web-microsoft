@@ -1,0 +1,29 @@
+.btn {
+  display: inline-block;
+  vertical-align: middle;
+  outline: 0;
+  border: solid 1px transparent;
+  text-decoration: none;
+  // @include font-size(18);
+  font-weight: fw(bold);
+  border-radius: 4px;
+  padding: 10px 12px;
+  min-width: 148px;
+  text-align: center;
+  color: color(white);
+  transition: all 0.3s ease;
+  @include x-small {
+    min-width: 160px;
+    padding: 15px 24px;
+    // @include font-size(16);
+  }
+  // &:hover {
+  //   transform: translateY(-4px);
+  // }
+  &-primary {
+    background-color: color(button);
+    &:hover {
+      background-color: color(buttonH);
+    }
+  }
+}

@@ -2,7 +2,13 @@
 import { Scrolllable, BrowserCheck } from "utilities";
 
 // --- components
-import { Header, Footer, WindowResize, WindowScroll } from "components";
+import {
+  Header,
+  HeroBanner,
+  Footer,
+  WindowResize,
+  WindowScroll,
+} from "components";
 
 // --- App
 const App = (() => {
@@ -31,6 +37,7 @@ const App = (() => {
 
       // --- Project
       Header.init();
+      HeroBanner.init();
       Footer.init();
       WindowResize.init();
       WindowScroll.init();

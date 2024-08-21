@@ -1,0 +1,36 @@
+/* ===============================================================
+   layouts : Hero Banner
+============================================================== */
+
+.hero-banner {
+  position: relative;
+  max-width: 1992px;
+  margin: 0 auto 40px;
+  overflow: visible;
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.custom-autoplay {
+  position: absolute;
+  bottom: 7px;
+  left: 43%;
+  z-index: 2;
+  cursor: pointer;
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+
+  @include large {
+    left: 40%;
+  }
+
+  @include medium {
+    left: 35%;
+  }
+}
+
+.play {
+  display: none;
+}

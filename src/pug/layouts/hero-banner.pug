@@ -1,0 +1,22 @@
+//-------------------------------------------------------------------------------
+ @name: Layout | Hero Banner
+ @desc: Hero-Banner Microsoft
+//-------------------------------------------------------------------------------//
+
+='\n'
+//hero-banner
+.hero-banner
+  .wrapper.js-hero-banner
+    each val, index in heroBannerData
+      include ../components/hero-banner.pug
+
+  ='\n'
+  //Custom Autoplay Controls
+  .custom-autoplay
+    ='\n'
+    img.stop(src="assets/img/icon/pause-button.png", alt="stop button")/
+    ='\n'
+    img.play(src="assets/img/icon/play-button.png", alt="play button")/
+
+='\n'
+//End Hero-Banner
