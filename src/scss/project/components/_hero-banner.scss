@@ -10,6 +10,10 @@
   }
   &__content {
     position: relative;
+    @include medium {
+      margin-left: -24px;
+      margin-right: -24px;
+    }
   }
   &__background {
     margin-left: -240px;
@@ -68,7 +72,7 @@
       box-shadow: 0 0.1875rem 0.4375rem rgba(0, 0, 0, 0.13),
         0 0.0625rem 0.125rem rgba(0, 0, 0, 0.11);
       padding: 24px 24px 16px;
-      padding-left: -24px;
+      max-width: 100%;
     }
   }
 
