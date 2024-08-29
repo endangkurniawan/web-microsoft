@@ -2,13 +2,58 @@
    layouts : Hero Banner
 ============================================================== */
 
+// @mixin show-hero-banner {
+//   .hero-banner {
+//     &__title,
+//     &__desc,
+//     &__btn {
+//       opacity: 1 !important;
+//       transform: none !important;
+//     }
+//     &__title {
+//       transition-delay: 450ms;
+//     }
+//     &__desc {
+//       transition-delay: 750ms;
+//     }
+//     &__btn {
+//       transition-delay: 1050ms;
+//     }
+//   }
+// }
+
 .hero-banner {
+  $hb: &;
   position: relative;
   max-width: 1992px;
   margin: 0 auto 40px;
   overflow: visible;
   display: flex;
   flex-wrap: nowrap;
+  // #{$hb} {
+  //   &__title,
+  //   &__desc,
+  //   &__btn {
+  //     opacity: 0;
+  //     transition: all 0.5s ease;
+  //   }
+  //   &__title,
+  //   &__desc,
+  //   &__btn {
+  //     transform: translateX(-32px);
+  //   }
+  // }
+  // // show 1 item
+  // &--single-show {
+  //   @include show-hero-banner;
+  // }
+  // &.owl-carousel {
+  //   .owl-item {
+  //     &.activ {
+  //       @include show-hero-banner;
+  //     }
+  //   }
+  // }
 }
 
 .custom-autoplay {

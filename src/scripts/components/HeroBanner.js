@@ -1,19 +1,14 @@
-/* ------------------------------------------------------------------------------
-@name: Hero banner
-@description: Hero banner
---------------------------------------------------------------------------------- */
-
 const HeroBanner = (() => {
-  // - handleHeroBanner
   const handleRunCarousel = () => {
     const _selector = $(".js-hero-banner");
     const _itemLength = $(".js-hero-banner .hero-banner__item").length;
-    //destroy carosuel
+
+    // Destroy carousel
     if (_selector.hasClass("owl-carousel")) {
       _selector.owlCarousel("destroy").removeClass("owl-carousel");
     }
 
-    // run
+    // Run
     if (_itemLength > 1) {
       _selector.addClass("owl-carousel").owlCarousel({
         loop: true,
@@ -24,15 +19,15 @@ const HeroBanner = (() => {
         autoplay: true,
         autoplaySpeed: 1000,
         autoplayTimeout: 5000,
-        // autoHeight: true,
-        // animateOut: "fadeIn",
       });
-      $(".play").on("click", function () {
+
+      $(".play").on("click", () => {
         _selector.trigger("play.owl.autoplay", [4000]);
         $(".play").css("display", "none");
         $(".stop").css("display", "block");
       });
-      $(".stop").on("click", function () {
+
+      $(".stop").on("click", () => {
         _selector.trigger("stop.owl.autoplay");
         $(".stop").css("display", "none");
         $(".play").css("display", "block");
@@ -43,7 +38,6 @@ const HeroBanner = (() => {
     }
   };
 
-  // - init
   const init = () => {
     if ($(".js-hero-banner").length) {
       handleRunCarousel();
